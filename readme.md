@@ -3,8 +3,13 @@ Modular Routing MEAN Stack Challenge
 
 Technologies
 ----------------------------------------
-(MEAN)
-* Mongodb
+(MEAN Stack)
+* Mongo
 * Express
 * Angular
-* Node
+* Node  
+
+Target
+----------------------------------------
+Create an app using server side-routing and client-side routing that interacts
+with a non-relational database using MEAN Stack.
