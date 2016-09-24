@@ -9,6 +9,9 @@ var mongoose = require('mongoose');
 // establish port
 var port = process.env.PORT || 1415;
 
+// static public folder
+app.use(express.static('server/public'));
+
 // require server side model and route
 var petModel = ('../models/petArchetype');
 var petRouter = ('../routers/petRoutes');
@@ -16,5 +19,11 @@ var petRouter = ('../routers/petRoutes');
 
 // spin-up server
 app.listen(port, function () {
-  console.log("Hi, I'm a server from pi. 3." + port + '9265359');
+  console.log("Hi, I'm a server from pi. 3." + port + '9265359!');
 });
+
+//base url
+app.get('/', function (req, res) {
+  console.log('Base ingredients are in the kitchen.');
+  res.sendFile(path.resolve('server/public/views/index.html'));
+});;
