@@ -1,4 +1,4 @@
-// require technologies
+// establish technologies
 var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
@@ -12,10 +12,9 @@ var port = process.env.PORT || 1415;
 // static public folder
 app.use(express.static('server/public'));
 
-// require server side model and route
-var petModel = ('../models/petArchetype');
-var petRouter = ('../routers/petRoutes');
-// app.use(petRouter);
+// link server side model and route
+var petRouter = require('../routers/petRoutes');
+app.use(petRouter);
 
 // spin-up server
 app.listen(port, function () {
