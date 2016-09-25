@@ -16,6 +16,10 @@ app.use(express.static('server/public'));
 var petRouter = require('../routers/petRoutes');
 app.use(petRouter);
 
+// link server to DB
+var mongoURI = 'mongodb://localhost:27017/pi_pets';
+var MongoDB = mongoose.connect(mongoURI).connection;
+
 // spin-up server
 app.listen(port, function () {
   console.log("Hi, I'm a server from pi. 3." + port + '9265359!');
@@ -25,4 +29,4 @@ app.listen(port, function () {
 app.get('/', function (req, res) {
   console.log('Base ingredients are in the kitchen.');
   res.sendFile(path.resolve('server/public/views/index.html'));
-});;
+});
