@@ -11,7 +11,6 @@ router.get('/viewPet', function (req, res) {
   console.log('In get all!');
 
   Pets.find({}, function (err, pets) {
-    console.log('in find');
     if (err) {
       console.log('You forgot to feed the pets!');
       res.sendStatus(500);
