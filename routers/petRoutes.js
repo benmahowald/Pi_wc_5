@@ -7,7 +7,7 @@ var mongoose = require('mongoose');
 var Pets = require('../models/petArchetype.js');
 
 // get route that retrieves all pets in DB
-router.get('/all', function (req, res) {
+router.get('/viewPet', function (req, res) {
   console.log('In get all!');
 
   Pets.find({}, function (err, pets) {
@@ -21,7 +21,7 @@ router.get('/all', function (req, res) {
   }); // end find
 }); // end get route
 
-router.post('/all', function (req, res) {
+router.post('/newPet', function (req, res) {
     console.log('In post all!');
     var data = req.body;
     var newPet = new Pets({
